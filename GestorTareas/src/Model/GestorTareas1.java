@@ -6,11 +6,8 @@ package Model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author USUARIO
- */
 public class GestorTareas1 {
+    //creamos la lista en la que se almacenaran los datos
     private ArrayList<Tarea>tareas=new ArrayList<>();
     private int nextId=1;
     

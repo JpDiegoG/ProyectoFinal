@@ -1,18 +1,19 @@
 package Model;
 
 public class Tarea {
+    //declaramos los atributos
     private int id;
     private String nombre;
     private String descripcion;
     private boolean completada;
-
+    //creamos el constructor
     public Tarea(int id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.completada = false;
     }
-
+    //creamos los getters y setters
     public int getId() {
         return id;
     }

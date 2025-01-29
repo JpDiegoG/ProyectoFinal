@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class TareasController {
+    //llamamos a las clase del paquete Model y View
     private GestorTareas1 modelo;
     private GestorVista vista;
 
@@ -57,12 +58,12 @@ public class TareasController {
     }
 
     private void actualizarTabla() {
-        // Obtener el modelo de la tabla
+        
         DefaultTableModel modeloTabla = vista.getModeloTabla();
-    modeloTabla.setRowCount(0); // Limpiar la tabla
+    modeloTabla.setRowCount(0);
 
     for (Tarea tarea : modelo.getTareas()) {
-        // Agregar una fila por cada tarea
+        
         modeloTabla.addRow(new Object[]{
             tarea.getId(),
             tarea.getNombre(),

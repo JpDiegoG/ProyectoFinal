@@ -27,30 +27,64 @@ public class GestorVista extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        panelSuperior = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         txtDescripcion = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblTareas = new javax.swing.JTable();
+        panelInferior = new javax.swing.JPanel();
         btnCompletar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        panelCentral = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblTareas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe Script", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 51, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("GESTOR DE TAREAS");
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setText("NOMBRE DE LA TAREA:");
+        panelSuperior.setLayout(new java.awt.GridLayout(3, 2));
 
-        jLabel3.setText("DESCRIPCION:");
+        jLabel1.setText("NOMBRE:");
+        panelSuperior.add(jLabel1);
+        panelSuperior.add(txtNombre);
 
-        btnAgregar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        btnAgregar.setText("AGREGAR NUEVA TAREA");
+        jLabel2.setText("DESCRIPCION:");
+        panelSuperior.add(jLabel2);
+        panelSuperior.add(txtDescripcion);
+
+        btnAgregar.setText("AGREGAR TAREA");
+        panelSuperior.add(btnAgregar);
+
+        jPanel1.add(panelSuperior, java.awt.BorderLayout.PAGE_START);
+
+        btnCompletar.setText("COMPLETAR");
+
+        btnEliminar.setText("ELIMINAR");
+
+        javax.swing.GroupLayout panelInferiorLayout = new javax.swing.GroupLayout(panelInferior);
+        panelInferior.setLayout(panelInferiorLayout);
+        panelInferiorLayout.setHorizontalGroup(
+            panelInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInferiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCompletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(567, Short.MAX_VALUE))
+        );
+        panelInferiorLayout.setVerticalGroup(
+            panelInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInferiorLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(btnCompletar)
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminar)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(panelInferior, java.awt.BorderLayout.PAGE_END);
 
         tblTareas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -60,78 +94,25 @@ public class GestorVista extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "NOMBRE", "DESCRIPCION", "COMPLETADA"
+                "Id", "Nombre", "Descripcion", "Completado"
             }
         ));
         jScrollPane1.setViewportView(tblTareas);
 
-        btnCompletar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        btnCompletar.setText("COMPLETAR");
-
-        btnEliminar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        btnEliminar.setText("ELIMINAR");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnCompletar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEliminar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(90, 90, 90)
-                        .addComponent(txtDescripcion))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(40, 40, 40)
-                        .addComponent(txtNombre)))
-                .addGap(0, 29, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelCentralLayout = new javax.swing.GroupLayout(panelCentral);
+        panelCentral.setLayout(panelCentralLayout);
+        panelCentralLayout.setHorizontalGroup(
+            panelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addComponent(btnAgregar)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCompletar)
-                    .addComponent(btnEliminar))
-                .addContainerGap(29, Short.MAX_VALUE))
+        panelCentralLayout.setVerticalGroup(
+            panelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel1.add(panelCentral, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,9 +186,11 @@ public class GestorVista extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelCentral;
+    private javax.swing.JPanel panelInferior;
+    private javax.swing.JPanel panelSuperior;
     private javax.swing.JTable tblTareas;
     private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtNombre;
