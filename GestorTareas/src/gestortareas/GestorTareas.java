@@ -17,4 +17,4 @@ public class GestorTareas {
         // Mostrar la vista
         view.setVisible(true);
     }
-    }
+}

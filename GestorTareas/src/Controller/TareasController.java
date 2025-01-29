@@ -68,7 +68,7 @@ public class TareasController {
             tarea.getId(),
             tarea.getNombre(),
             tarea.getDescripcion(),
-            tarea.isCompletada() ? "Sí" : "No"
+            tarea.isCompletada() ? "Completada" : "Pendiente"
             });
         }
     }
